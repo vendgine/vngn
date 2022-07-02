@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "emitDecoratorMetadata": false,
+        "noImplicitReturns": true,
+        "target": "es2022",
+        "lib": ["esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "isolatedModules": true,
+        "experimentalDecorators": true,
+        "module": "ES2022",
+        "esModuleInterop": true,
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "build",
+        "downlevelIteration": true,
+        "noEmitHelpers": true,
+        "importHelpers": true,
+        "strictNullChecks": false,
+        "paths": {
+            "@/*": ["./sources/*"]
+        }
+    },
+    "include": ["sources/**/*", "tests/**/*"]
+}
