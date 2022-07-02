@@ -20,7 +20,7 @@ export function isDeliveryLocation(constructor: Newable<unknown>): constructor i
 /**
  * This type declares any delivery type.
  */
-export type AnyDelivery = Delivery<Newable<object>, any[], any[]>
+export type AnyDelivery = Delivery<Newable<object>, unknown[], unknown[]>
 /**
  * This type declares tuple where all elements are optional.
  */

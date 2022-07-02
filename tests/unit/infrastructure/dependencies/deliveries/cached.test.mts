@@ -25,17 +25,17 @@ describe("CachedDelivery", () => {
         it("sets string lifetime passed as the first argument", () => {
             class TestClass {}
 
-            var cachedDelivery = new CachedDelivery("1s", TestClass)
-            expect(cachedDelivery.lifetime).to.be.equal(1000)
+            const cachedDelivery1 = new CachedDelivery("1s", TestClass)
+            expect(cachedDelivery1.lifetime).to.be.equal(1000)
 
-            var cachedDelivery = new CachedDelivery("1m", TestClass)
-            expect(cachedDelivery.lifetime).to.be.equal(1000 * 60)
+            const cachedDelivery2 = new CachedDelivery("1m", TestClass)
+            expect(cachedDelivery2.lifetime).to.be.equal(1000 * 60)
 
-            var cachedDelivery = new CachedDelivery("1h", TestClass)
-            expect(cachedDelivery.lifetime).to.be.equal(1000 * 60 * 60)
+            const cachedDelivery3 = new CachedDelivery("1h", TestClass)
+            expect(cachedDelivery3.lifetime).to.be.equal(1000 * 60 * 60)
 
-            var cachedDelivery = new CachedDelivery("1d", TestClass)
-            expect(cachedDelivery.lifetime).to.be.equal(1000 * 60 * 60 * 24)
+            const cachedDelivery4 = new CachedDelivery("1d", TestClass)
+            expect(cachedDelivery4.lifetime).to.be.equal(1000 * 60 * 60 * 24)
         })
 
         it("throws an exception if format is incorrect", () => {

@@ -26,7 +26,7 @@ export type OverridedConstructorOf<Class, Arguments extends unknown[] = never[]>
 export type ContainerOf<Contents extends Provider> = {
     readonly [name in keyof Contents]: ReturnType<Contents[name]> extends Delivery<
         infer SourceConstructor,
-        infer PreparedParameters,
+        unknown[],
         infer DeliveredParameters
     >
         ? OverridedConstructorOf<SourceConstructor, DeliveredParameters>
