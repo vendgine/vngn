@@ -15,7 +15,7 @@
             "runtimeExecutable": null,
             "preLaunchTask": "npm: build",
             "env": {
-              "NODE_ENV": "testing"
+                "NODE_ENV": "testing"
             }
         }
     ]

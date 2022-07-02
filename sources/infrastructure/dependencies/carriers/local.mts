@@ -61,7 +61,7 @@ export default class LocalCarrier<CurrentProvider extends Provider> implements C
      * @param constructor argument passed from "construct" method of a proxy handler.
      * @param constructorArguments arguments passed to 'construct' method of a proxy handler.
      */
-    private deliver(delivery: AnyDelivery, origin: Function, constructorArguments: unknown[]): object {
+    private deliver(delivery: AnyDelivery, origin: unknown, constructorArguments: unknown[]): object {
         return delivery.open(this.container, ...constructorArguments)
     }
 }
