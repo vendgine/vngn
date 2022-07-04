@@ -52,7 +52,7 @@ export default class CachedDelivery<
     open(container: Container, ...constructorArguments: DeliveredParameters): DeliveredInstanceOf<SourceConstructor> {
         const finalArguments = [container, ...this.preparedArguments, ...constructorArguments]
         
-        const instances = cachedDeliveries.get(this.sourceConstructor)
+        const instances = cachedDeliveries.get(this.sourceConstructor)!
         // Find saved cached instance of the delivery:
         for (const [cachedArguments, cachedInstance] of instances.entries()) {
             if ((finalArguments.every((value, index) => value === cachedArguments[index]))
@@ -60,7 +60,7 @@ export default class CachedDelivery<
               ) {
                 if (this.lifetime !== Infinity) {
                     // Restart delivery timer for this instance: 
-                    deliveryTimers.get(this.sourceConstructor).refresh()
+                    deliveryTimers.get(this.sourceConstructor)!.refresh()
                 }
                 // Return saved instance of the object:
                 return cachedInstance as DeliveredInstanceOf<SourceConstructor>
@@ -124,7 +124,7 @@ export default class CachedDelivery<
         if ( lifetime.constructor === String ) {
             // Validate the value format:
             if ( LIFETIME_PARSING_REGEXP.test( lifetime ) ) {
-                const [, value, units] = LIFETIME_PARSING_REGEXP.exec(lifetime)
+                const [, value, units] = LIFETIME_PARSING_REGEXP.exec(lifetime)!
                 const numericValue = Number(value)
                 // Convert to a number based on units of the value:
                 switch ( units ) {
