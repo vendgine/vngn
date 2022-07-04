@@ -49,11 +49,11 @@ export type RemainingParameters<
 > = IsUnspecified<Parameters> extends true
     ? never[]
     : ((...args: Parameters) => void) extends (
-          first?: infer FirstOfParameters,
+          first: infer FirstOfParameters,
           ...other: infer RestOfParameters
       ) => void
     ? ((...args: ParametersToRemove) => void) extends (
-          first?: infer FirstOfParametersToRemove,
+          first: infer FirstOfParametersToRemove,
           ...other: infer RestOfParametersToRemove
       ) => void
         ? FirstOfParametersToRemove extends FirstOfParameters

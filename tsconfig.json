@@ -21,7 +21,6 @@
         "downlevelIteration": true,
         "noEmitHelpers": true,
         "importHelpers": true,
-        "strictNullChecks": false,
         "paths": {
             "@/*": ["./sources/*"]
         }
