@@ -16,6 +16,7 @@ module.exports = {
         "@typescript-eslint/quotes": ["error", "double"],
         "@typescript-eslint/no-explicit-any": ["error", { ignoreRestArgs: true }],
         "@typescript-eslint/no-empty-interface": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
     },
     globals: {
         NodeJS: true,
